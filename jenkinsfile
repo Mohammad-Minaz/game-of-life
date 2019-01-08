@@ -11,8 +11,8 @@ node {
    // archival the artifacts
    archiveArtifacts 'gameoflife-web/target/gameoflife.war'
   }
-   stage('junit'){
+   //stage('junit'){
    // show the result
-   junit 'gameoflife-web/target/surefire-reports/*.xml'
-  }
+   //junit 'gameoflife-web/target/surefire-reports/*.xml'
+  //}
 }
