@@ -1,0 +1,18 @@
+node {
+  stage('source code management'){
+   //git clone
+    git 'https://github.com/wakaleo/game-of-life.git'   
+  }
+  stage('building the packages'){
+   // mvn packages
+   sh 'mvn package'
+  }
+  stage('archival'){
+   // archival the artifacts
+   archiveArtifacts 'gameoflife-web/target/gameoflife.war'
+  }
+   stage('junit'){
+   // show the result
+   junit 'gameoflife-web/target/surefire-reports/*.xml'
+  }
+}
